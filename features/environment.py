@@ -7,9 +7,8 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    driver_path = ChromeDriverManager().install()
-    service = Service(driver_path)
-    context.driver = webdriver.Chrome(service=service)
+    driver_path = './chromedriver.exe'
+    context.driver = webdriver.Chrome(executable_path=driver_path)
 
     context.driver.maximize_window()
 
