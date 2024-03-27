@@ -14,9 +14,11 @@ driver.get('https://www.target.com/')
 
 # steps
 driver.find_element(By.XPATH, '//span[text()="Sign in"]').click()
+sleep(1)
 driver.find_element(By.XPATH, '//a[@data-test="accountNav-signIn"]').click()
 
 # verification
+sleep(2)
 actual_text = driver.find_element(By.XPATH, '//span[text()="Sign into your Target account"]').text
 driver.find_element(By.ID, "login")
 #driver.find_element(By.ID, "login")
