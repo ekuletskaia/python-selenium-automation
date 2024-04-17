@@ -10,11 +10,9 @@ HEADER = (By.CSS_SELECTOR, "[class*='HeaderContainer']")
 HEADER_LINKS = (By.CSS_SELECTOR, 'a[data-test*="GlobalHeader/UtilityHeader"]')
 
 
-
 @given("Open target.com")
 def open_target(context):
     context.driver.get('https://www.target.com/')
-    sleep(3)
 
 
 @when("Search for {item}")
@@ -27,13 +25,12 @@ def search_product(context, item):
 @when("Click on Cart icon")
 def click_on_cart_icon(context):
     context.driver.find_element(*CART_ICON).click()
-    sleep(5)
+
 
 
 @then('Verify header is shown')
 def verify_header(context):
     context.driver.find_element(*HEADER)
-    sleep(3)
 
 
 @then('Verify header has {expected_amount} links')

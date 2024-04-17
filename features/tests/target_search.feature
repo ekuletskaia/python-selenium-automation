@@ -7,6 +7,7 @@ Feature: Search tests
     When Add product to Cart
     Then Verify mug is in the cart
 
+
   Scenario Outline: User can search for product
     Given Open target.com
     When Search for <item>
@@ -16,3 +17,9 @@ Feature: Search tests
     |coffee      |coffee          |
     |tea         |tea             |
     |mug         |mug             |
+
+  Scenario: Verify that every product on Target search results
+  page has a product name and product image
+    Given Open target.com
+    When Search for chair
+    Then Verify search results display product name and product image

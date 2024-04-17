@@ -2,13 +2,13 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
+
 CIRCLE_LINKS = (By.CSS_SELECTOR, '[data-component-id="WEB-397697"] [data-test*="/CellsComponent/Link"]')
 
 
 @given('Open Target Circle page')
 def open_circle_page(context):
     context.driver.get('https://www.target.com/circle')
-    sleep(5)
 
 
 @then('Verify {expected_circle_elements} circle elements are shown')
