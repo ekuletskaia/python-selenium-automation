@@ -35,5 +35,9 @@ def verify_item(context, item):
 
 @then('Verify search results display product name and product image')
 def verify_search_results(context):
-    context.driver.find_element(*PRODUCT_TITLE)
-    context.driver.find_element(*PRODUCT_IMAGE)
+    titles = context.driver.find_elements(*PRODUCT_TITLE)
+    images = context.driver.find_elements(*PRODUCT_IMAGE)
+    print(len(titles))
+    print(len(images))
+
+assert len(titles) == len(images) # I don't know how to verify???
