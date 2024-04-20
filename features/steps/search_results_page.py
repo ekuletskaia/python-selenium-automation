@@ -20,6 +20,7 @@ def verify_search_results(context, expected_item):
     # assert expected_item in actual_text, f'Error! Text {expected_item} not in {actual_text}'
     context.app.search_results_page.verify_search_results(expected_item)
 
+
 @when('Add product to Cart')
 def add_to_cart(context):
     context.driver.find_element(*ADD_TO_CART_BTN1).click()

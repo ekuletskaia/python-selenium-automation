@@ -23,10 +23,11 @@ def search_product(context, item):
     # sleep(10)
     context.app.header.search_product(item)
 
+
 @when("Click on Cart icon")
 def click_on_cart_icon(context):
-    context.driver.find_element(*CART_ICON).click()
-
+    # context.driver.find_element(*CART_ICON).click()
+    context.app.main_page.click_cart_icon()
 
 
 @then('Verify header is shown')
