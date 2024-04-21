@@ -24,7 +24,7 @@ def enter_email_and_password(context, email, password):
 @when('Click Sign in with password')
 def click_sign_in_with_password(context):
 
-    context.app.base_page.click_sign_in_with_password()
+    context.app.sign_in_page.click_sign_in_with_password()
 
 
 @then('Verify user is logged in')

@@ -8,5 +8,5 @@ class AddToCartModul(Page):
     VIEW_CART_BTN = (By.CSS_SELECTOR, 'a[href="/cart"]')
 
     def add_product_to_cart(self):
-        self.driver.find_element(*self.ADD_TO_CART_BTN2).click(), "Button Add to Cart not present on the page"
-        self.driver.find_element(*self.VIEW_CART_BTN).click()
+        self.wait_until_clickable_click(*self.ADD_TO_CART_BTN2), "Button Add to Cart not present on the page"
+        self.wait_until_clickable_click(*self.VIEW_CART_BTN)

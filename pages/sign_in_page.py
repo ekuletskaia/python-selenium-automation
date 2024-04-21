@@ -15,11 +15,11 @@ class SignInPage(Page):
         assert actual_text in expected_text, f'Error! Text {expected_text} not in {actual_text}'
 
     def enter_email_and_password(self, email, password):
-        self.driver.input_text(email, *self.EMAIL_FIELD)
-        self.driver.input_text(password, *self.PASSWORD_FIELD)
+        self.input_text(email, *self.EMAIL_FIELD)
+        self.input_text(password, *self.PASSWORD_FIELD)
 
     def click_sign_in_with_password(self):
-        self.driver.click(*self.SIGN_IN_WITH_PSW_BTN)
+        self.click(*self.SIGN_IN_WITH_PSW_BTN)
 
     def verify_user_is_logged_in(self):
-        self.driver.verify_item_disappear(*self.TEXT_SIGN_IN)
+        self.verify_item_disappear(*self.TEXT_SIGN_IN)

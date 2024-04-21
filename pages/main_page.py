@@ -11,5 +11,5 @@ class MainPage(Page):
         self.driver.get("https://www.target.com/")
 
     def click_sign_in(self):
-        self.driver.find_element(*self.SIGN_IN_BTN).click()
-        self.driver.find_element(*self.SIGN_OUT_BTN_FROM_SIDE_MENU).click()
+        self.find_element(*self.SIGN_IN_BTN).click()
+        self.find_element(*self.SIGN_OUT_BTN_FROM_SIDE_MENU).click()

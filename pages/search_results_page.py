@@ -11,5 +11,5 @@ class SearchResultsPage(Page):
         assert expected_item in actual_text, f'Error! Text {expected_item} not in {actual_text}'
 
     def add_to_cart(self):
-        self.driver.find_element(*self.ADD_TO_CART_BTN1).click()
+        self.find_element(*self.ADD_TO_CART_BTN1).click()
 
