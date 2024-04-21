@@ -3,10 +3,13 @@ from selenium.webdriver.common.by import By
 
 
 class MainPage(Page):
-    CART_ICON = (By.CSS_SELECTOR, "div[data-test*='CartIcon']")
+
+    SIGN_IN_BTN = (By.XPATH, '//span[text()="Sign in"]')
+    SIGN_OUT_BTN_FROM_SIDE_MENU = (By.XPATH, '//a[@data-test="accountNav-signIn"]')
 
     def open_main(self):
         self.driver.get("https://www.target.com/")
 
-    def click_cart_icon(self):
-        self.driver.find_element(*self.CART_ICON).click()
+    def click_sign_in(self):
+        self.driver.find_element(*self.SIGN_IN_BTN).click()
+        self.driver.find_element(*self.SIGN_OUT_BTN_FROM_SIDE_MENU).click()

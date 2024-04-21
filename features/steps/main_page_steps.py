@@ -3,9 +3,6 @@ from behave import given, when, then
 from time import sleep
 
 
-SEARCH_INPUT = (By.ID, "search")
-SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
-CART_ICON = (By.CSS_SELECTOR, "div[data-test*='CartIcon']")
 HEADER = (By.CSS_SELECTOR, "[class*='HeaderContainer']")
 HEADER_LINKS = (By.CSS_SELECTOR, 'a[data-test*="GlobalHeader/UtilityHeader"]')
 
@@ -18,16 +15,14 @@ def open_target(context):
 
 @when("Search for {item}")
 def search_product(context, item):
-    # context.driver.find_element(*SEARCH_INPUT).send_keys(item)
-    # context.driver.find_element(*SEARCH_BTN).click()
-    # sleep(10)
+
     context.app.header.search_product(item)
 
 
 @when("Click on Cart icon")
 def click_on_cart_icon(context):
     # context.driver.find_element(*CART_ICON).click()
-    context.app.main_page.click_cart_icon()
+    context.app.header.click_cart_icon()
 
 
 @then('Verify header is shown')

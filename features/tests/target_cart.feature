@@ -4,4 +4,4 @@ Feature: Cart tests
   Scenario: Verify Cart Functionality
     Given Open target.com
     When Click on Cart icon
-    Then Verify “Your cart is empty” message is shown
+    Then Verify 'Your cart is empty' message is shown

@@ -5,12 +5,29 @@ from time import sleep
 
 @when("Click Sign In")
 def click_sign_in(context):
-    context.driver.find_element(By.XPATH, '//span[text()="Sign in"]').click()
-    context.driver.find_element(By.XPATH, '//a[@data-test="accountNav-signIn"]').click()
+
+    context.app.main_page.click_sign_in()
 
 
 @then("Verify Sign In form opened")
 def verify_sign_in_form_opened(context):
-    actual_text = context.driver.find_element(By.XPATH, '//span[text()="Sign into your Target account"]').text
-    context.driver.find_element(By.ID, "login")
-    assert "Sign into your Target account" in actual_text, f"Error! -Sign into your Target account- not in {actual_text}"
+
+    context.app.sign_in_page.verify_sign_in_form_opened()
+
+
+@when('Enter valid {email} and {password}')
+def enter_email_and_password(context, email, password):
+
+    context.app.sign_in_page.enter_email_and_password(email, password)
+
+
+@when('Click Sign in with password')
+def click_sign_in_with_password(context):
+
+    context.app.base_page.click_sign_in_with_password()
+
+
+@then('Verify user is logged in')
+def verify_user_is_logged_in(context):
+
+    context.app.sing_in_page.verify_user_is_logged_in()

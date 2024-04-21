@@ -23,3 +23,4 @@ Feature: Search tests
     Given Open target.com
     When Search for chair
     Then Verify search results display product name and product image
+    Then Verify URL has chair
