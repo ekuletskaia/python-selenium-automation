@@ -19,7 +19,7 @@ class SignInPage(Page):
         self.input_text(password, *self.PASSWORD_FIELD)
 
     def click_sign_in_with_password(self):
-        self.click(*self.SIGN_IN_WITH_PSW_BTN)
+        self.wait_until_clickable_click(*self.SIGN_IN_WITH_PSW_BTN)
 
     def verify_user_is_logged_in(self):
         self.verify_item_disappear(*self.TEXT_SIGN_IN)

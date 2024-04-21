@@ -30,4 +30,4 @@ def click_sign_in_with_password(context):
 @then('Verify user is logged in')
 def verify_user_is_logged_in(context):
 
-    context.app.sing_in_page.verify_user_is_logged_in()
+    context.app.sign_in_page.verify_user_is_logged_in()

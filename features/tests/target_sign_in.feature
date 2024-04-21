@@ -9,6 +9,6 @@ Feature: Sign In
   Scenario: Verify that registered user logged in
     Given Open target.com
     When Click Sign In
-    When Enter valid e.kuletskaia@gmail.com and *************
+    When Enter valid nataliyshkevich@cwrotzxks.com and 112233Test!
     When Click Sign in with password
     Then Verify user is logged in
