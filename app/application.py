@@ -5,6 +5,7 @@ from pages.header import Header
 from pages.search_results_page import SearchResultsPage
 from pages.sign_in_page import SignInPage
 from pages.add_to_cart_modul import AddToCartModul
+from pages.target_app_page import TargetAppPage
 
 
 class Application:
@@ -17,3 +18,4 @@ class Application:
         self.search_results_page = SearchResultsPage(driver)
         self.cart_page = CartPage(driver)
         self.add_to_cart_modul = AddToCartModul(driver)
+        self.target_app_page = TargetAppPage(driver)
