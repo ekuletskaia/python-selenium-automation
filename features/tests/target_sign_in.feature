@@ -13,6 +13,13 @@ Feature: Sign In
     When Click Sign in with password
     Then Verify user is logged in
 
+  Scenario: Verify that user can not login with invalid credentials
+    Given Open target.com
+    When Click Sign In
+    When Enter invalid test@cwrotzxks.com and 789test987
+    When Click Sign in with password
+    Then Verify user isn't logged in
+
   Scenario: User can open and close Terms and Conditions from sign in page
 #    Given Open sign in page
     Given Open target.com

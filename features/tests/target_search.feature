@@ -24,3 +24,9 @@ Feature: Search tests
     When Search for chair
     Then Verify search results display product name and product image
     Then Verify URL has chair
+
+  Scenario: User can see favorites tooltip for search results
+    Given Open target.com
+    When Search for candle
+    And Hover favorites icon
+    Then Favorites tooltip is shown

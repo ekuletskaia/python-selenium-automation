@@ -3,6 +3,16 @@ from behave import given, when, then
 from time import sleep
 
 
+@given('Open Sign In page')
+def open_sign_in_page(context):
+    context.app.sign_in_page.open_sign_in_page()
+
+
+@when('Enter invalid {email} and {password}')
+def enter_invalid_credentials(context, email, password):
+    context.app.sign_in_page.enter_email_and_password(email, password)
+
+
 @when("Click Sign In")
 def click_sign_in(context):
     context.app.main_page.click_sign_in()
@@ -58,5 +68,7 @@ def return_to_original_window(context):
     context.app.sign_in_page.switch_window_by_id(context.original_window)
 
 
-
+@then("Verify user isn't logged in")
+def verify_user_isnt_logged_in(context):
+    context.app.sign_in_page.verify_user_isnt_logged_in()
 

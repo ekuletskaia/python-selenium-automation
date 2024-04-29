@@ -7,15 +7,23 @@ PRODUCT_TITLE = (By.CSS_SELECTOR, 'a[data-test="product-title"]')
 PRODUCT_IMAGE = (By.CSS_SELECTOR, 'picture[data-test*="ProductCardImage"]')
 
 
+@when('Hover favorites icon')
+def hover_fav_icon(context):
+    context.app.search_results_page.hover_fav_icon()
+
+
+@then('Favorites tooltip is shown')
+def verify_fav_tooltip(context):
+    context.app.search_results_page.verify_fav_tooltip()
+
+
 @then("Verify search results are shown for {expected_item}")
 def verify_search_results(context, expected_item):
-
     context.app.search_results_page.verify_search_results(expected_item)
 
 
 @then('Verify URL has {expected_text}')
 def verify_url_has_text(context, expected_text):
-
     context.app.base_page.url_contains(expected_text)
 
 

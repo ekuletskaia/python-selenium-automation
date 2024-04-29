@@ -9,6 +9,13 @@ class SignInPage(Page):
     PASSWORD_FIELD = (By.ID, "password")
     SIGN_IN_WITH_PSW_BTN = (By.ID, "login")
     TC_LINK = (By.CSS_SELECTOR, 'a[aria-label*="terms & conditions"]')
+    ERROR_MSG = (By.CSS_SELECTOR, '[data-test*="AlertDisplay"]')
+
+    def open_sign_in_page(self):
+        self.open('https://www.target.com/login?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin')
+
+    def verify_user_isnt_logged_in(self):
+        self.verify_item_visible(*self.ERROR_MSG)
 
     def verify_sign_in_form_opened(self):
         actual_text = self.driver.find_element(*self.TEXT_SIGN_IN).text
@@ -33,3 +40,4 @@ class SignInPage(Page):
 
     def verify_tc_page(self):
         self.url_contains('terms-conditions')
+

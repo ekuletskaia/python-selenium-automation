@@ -11,6 +11,30 @@ AREA_2 = (By.CSS_SELECTOR, '.grid_4')
 TITLE_ALL_HELP_PAGES = (By.XPATH, '//h2[text()="Browse all Help pages"]')
 
 
+@given('Open Help page for Returns')
+def open_help_returns(context):
+    context.app.help_page.open_help_returns()
+
+
+@when('Select Help topic {option}')
+def select_topic(context, option):
+    context.app.help_page.select_topic(option)
+
+
+# @then('Verify Returns page opened')
+# def verify_returns_opened(context):
+#     context.app.help_page.verify_returns_opened()
+#
+#
+# @then('Verify current promotions page opened')
+# def verify_promotions_opened(context):
+#     context.app.help_page.verify_promotions_header()
+
+@then('Verify {header} page opened')
+def verify_help_page_header(context, header):
+    context.app.help_page.verify_header(header)
+
+
 @given('Open Help page')
 def open_circle_page(context):
     context.driver.get('https://help.target.com/help')
