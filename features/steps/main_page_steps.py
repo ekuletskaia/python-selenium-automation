@@ -13,6 +13,12 @@ def open_target(context):
     context.app.main_page.open_main()
 
 
+@when('Click Feedback')
+def click_feedback(context):
+    context.app.main_page.scroll_to_bottom()
+    context.app.main_page.click_feedback()
+
+
 @when("Search for {item}")
 def search_product(context, item):
 
